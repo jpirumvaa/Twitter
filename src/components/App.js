@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import {handleInitialData} from '../actions/shared'
 import Dashboard from './Dashboard'
+import LoadingBar from 'react-redux-loading-bar'
 
 
 class App extends Component {
@@ -11,9 +12,9 @@ class App extends Component {
   render() {
     return (
       <div>
+        <LoadingBar />
         {this.props.loading===true? <div className="center">
-				<p>Wait for Data patiently, it won't take long!</p>
-				<img src="https://media.giphy.com/media/y1ZBcOGOOtlpC/200.gif"/>
+				<h2>--------------------Wait----------------------</h2>
 				</div>:
           <Dashboard/>
         }
